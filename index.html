@@ -1,31 +1,31 @@
 <!doctype html>
-<html ng-app='LunchChecker' lang="en">
+<html lang="en" ng-app="LunchChecker">
   <head>
     <title>Lunch Checker</title>
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <style>
-      .message { font-size: 1.3em; font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 <body>
-   <div class="container">
-     <h1>Lunch Checker</h1>
+    <div  id="container">
+        <h1>Lunch Checker</h1>
+            <div ng-controller="LunchCheckerController">
+                <h2>Lunch List</h2>
+                    <div>
+                        <input type="text" ng-model="item" placeholder="Enter your lunch items">
+                        <p>Commas are also consider as an item here.</p>
+                        
+                    </div>
+                    <br>
 
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="textbox">
-         </div>
-         <div class="form-group">
-             <button ng-keyup="getValue();" class="btn btn-default">Check If Too Much</button>
-         </div>
-         <div ng-controller='LunchCheckerController' class="form-group message">
-          {{finalValue}}
-         </div>
-   </div>
-
+                    <div>
+                        <button ng-click="check()">Check If Too Much</button>
+                    </div>
+                    <br>
+                    <h3>{{item}}</h3>
+                
+            </div>
+    </div>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
