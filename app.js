@@ -8,6 +8,7 @@
     
     function LunchCheckerController($scope) {
         $scope.item = '';
+        $scope.message = 'Write items';
         
         $scope.check = function () {
             const words = $scope.item.split(' ');
